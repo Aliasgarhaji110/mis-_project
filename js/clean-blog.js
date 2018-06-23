@@ -14,6 +14,5 @@
   var MQL = 992;
 
   //primary navigation slide-in effect
-  
 
 })(jQuery); // End of use strict

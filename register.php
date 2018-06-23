@@ -7,7 +7,7 @@
 <div class="container" style="margin-top: 100px;">
   <div class="row">
     <div class="col-md-6">
-      <form id="stu_credentials" >
+      <form id="stu_credentials" method="post" enctype="multipart/form-data" action="actions/register_action.php">
       <h4 class="col-md-12" style="font-weight:bolder;">Personal Details</h4>
       <hr>
       <div class="form-group col-md-12">
@@ -17,6 +17,14 @@
       <div class="form-group col-md-12">
       <label> Enter Somaiya Email-id</label>
         <input type="email" class="form-control" name="stu_email" placeholder="Eg : abcd@somaiya.edu">
+      </div>
+      <div class="form-group col-md-12">
+        <label> Enter New Password</label>
+        <input type="password" class="form-control" name="stu_password" placeholder="Enter new Password">
+      </div>
+      <div class="form-group col-md-12">
+        <label> Confirm New Password</label>
+        <input type="password" class="form-control" name="stu_cpassword" placeholder="Confirm new Password">
       </div>
       <div class=" form-group col-md-12">
         <label> Student Name</label>
@@ -34,10 +42,10 @@
         <div class="form-group col-md-6">
           <label>Gender</label>
           <select name="stu_gender" class="form-control">
-            <option> </option>
-            <option>male</option>
-            <option>female</option>
-            <option>other</option>
+            <option value="0">Please select </option>
+            <option value="1">male</option>
+            <option value="2">female</option>
+            <option value="3">other</option>
           </select>
 
         </div>
@@ -50,11 +58,11 @@
         <div class="form-group col-md-6">
             <label>Year</label>
             <select name="stu_year" class="form-control">
-                <option>Please Select </option>
-                <option>FE</option>
-                <option>SE</option>
-                <option>TE</option>
-                <option>BE</option>
+                <option value="0">Please Select </option>
+                <option value="1">FE</option>
+                <option value="2">SE</option>
+                <option value="3">TE</option>
+                <option value="4">BE</option>
             </select>
         </div>
       </div>
@@ -66,12 +74,12 @@
             <div class="form-group col-md-6">
                 <label> Branch</label>
                  <select name="stu_branch" class="form-control">
-                    <option>Please Select </option>
-                    <option>COMPS</option>
-                    <option>IT</option>
-                    <option>EXTC</option>
-                    <option>ETRX</option>
-                    <option>MECH</option>
+                    <option value="0">Please Select </option>
+                    <option value="1">COMPS</option>
+                    <option value="2">IT</option>
+                    <option value="3">EXTC</option>
+                    <option value="4">ETRX</option>
+                    <option value="5">MECH</option>
                  </select>
             </div>
         </div>
@@ -369,7 +377,7 @@
       </div>
       <div class="form-group col-md-12">
          <label>Father's Number</label>
-        <input type="text" class="form-control" name="stu_father_num" placeholder="Enter 10 digit number">
+        <input type="text" class="form-control" name="stu_father_number" placeholder="Enter 10 digit number">
       </div>
       <div class="form-group col-md-12">
       <label> Enter Father's Email-id</label>
@@ -381,7 +389,7 @@
       </div>
        <div class="form-group col-md-12">
          <label>Mother's Number</label>
-        <input type="text" class="form-control" name="stu_mother_num" placeholder="Enter 10 digit number">
+        <input type="text" class="form-control" name="stu_mother_number" placeholder="Enter 10 digit number">
       </div>
       <div class="form-group col-md-12">
       <label> Enter Mother's Email-id</label>
@@ -390,12 +398,11 @@
 
 
       <div class="form-group col-md-12">
-        <label for="exampleFormControlFile1">Upload your photo here:(Type: .jpg)</label>
-        <br>
-        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        <label>Upload your photo here:(Type: .jpg)</label>
+        <input type="file" class="form-control" name="stu_img" >
       </div>
       
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <input type="submit" id="stu_sub" value="submit">
     </form>
   </div>
 </div>
