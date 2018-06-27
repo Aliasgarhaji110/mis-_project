@@ -27,7 +27,7 @@
         <input type="password" class="form-control" name="stu_cpassword" placeholder="Confirm new Password">
       </div>
       <div class=" form-group col-md-12">
-        <label> Student Name</label>
+        <label>Name of Student</label>
           <div class="form-check-inline">
             <input type="text" class="form-control col-md-4" name="stu_fname" placeholder="Enter First Name">
             <input type="text" class="form-control col-md-4" name="stu_mname" placeholder="Enter Middle Name">

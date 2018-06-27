@@ -1,4 +1,4 @@
-<header class="masthead" style="background-image: url('img/kjsce.jpg'); height: 600px;">
+<header class="masthead" style="background-image: url('img/banner.jpg'); height: 600px;">
         <div class="overlay"></div>
         <div class="container">
           <div class="row">

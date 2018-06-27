@@ -45,9 +45,29 @@
             <li class="nav-item">
               <a class="nav-link" href="register.php" style="color: #000;">Register</a>
             </li>
+            <?php  
+              if(!isset($_SESSION['user_img_path'])):
+            ?>
             <li class="nav-item">
               <a class="nav-link" href="login.php" style="color: #000;">Login</a>
             </li>
+            <?php  
+              endif;
+            ?>
+            <?php  
+              if(isset($_SESSION['user_img_path'])):
+            ?>
+            <li class="nav-item">
+              <a class="nav-link" href="logout.php" style="color: #000;">Logout</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="details.php">
+              <img src="<?php echo($_SESSION['user_img_path']) ?>" class="img-circle" width="30px" height="30px" >  
+              </a>
+            </li>
+            <?php  
+              endif;
+            ?>
             
           </ul>
         </div>

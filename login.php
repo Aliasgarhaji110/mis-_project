@@ -10,7 +10,7 @@
           <input type="email" class="form-control" name="stu_email" placeholder="Eg : abcd@somaiya.edu">
         </div>
         <div class="form-group col-md-12">
-          <label> Enter New Password</label>
+          <label> Enter Password</label>
           <input type="password" class="form-control" name="stu_password" placeholder="Enter new Password">
         </div>
         <div class="form-group col-md-12">

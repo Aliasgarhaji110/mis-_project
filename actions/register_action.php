@@ -46,7 +46,7 @@
 				if(in_array($_FILES['stu_img']['type'], $arr)){
 					
 					$tmp=$_FILES['stu_img']['tmp_name'];
-					$path="student_img\ ".$_FILES['stu_img']['name'];
+					$path="student_img/".$_FILES['stu_img']['name'];
 					$file_upload=move_uploaded_file($tmp, $path);
 					if($file_upload){
 						
@@ -54,7 +54,7 @@
 						$ans=mysqli_query($conn,$str_up)or die(mysqli_error($conn));
 						if($ans){
 							echo("data entered");
-							header("location:login.php");
+							header("location:../login.php");
 						}
 
 					}
