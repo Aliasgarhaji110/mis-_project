@@ -39,29 +39,31 @@
 			echo "User Already Registered.";
 		}
 		else{
-		if(empty($_FILES['stu_img']['name'])) echo "pls select a Image";
-		else if($_FILES['stu_img']['size']>1024*1024) echo "file size exceeded";
-		else{
-			$arr= array("image/jpeg","image/pjpeg","image/png","image/gif");//mime file types
-			if(in_array($_FILES['stu_img']['type'], $arr)){
-				$tmp=$_FILES['stu_img']['tmp_name'];
-				$path="student_img/".$_FILES['stu_img']['name'];
-				$file_upload=move_uploaded_file($tmp, $path);
-				if($file_upload){
-					
-					$str_up="Insert into students(stu_id,stu_email,stu_password,stu_fname,stu_mname,stu_lname,stu_dob,stu_gender,stu_blood,stu_year,stu_division,stu_branch,stu_add1,stu_add_locality,stu_add_city,stu_add_state,stu_add_pincode,stu_add_country,stu_father_name,stu_father_number,stu_father_email,stu_mother_name,stu_mother_number,stu_mother_email,stu_img)values('$stuid','".$_POST['stu_email']."','$password','".$_POST['stu_fname']."','".$_POST['stu_mname']."','".$_POST['stu_lname']."','".$_POST['stu_dob']."',,'".$_POST['stu_gender']."','".$_POST['stu_blood']."','".$_POST['stu_year']."','".$_POST['stu_division']."','".$_POST['stu_branch']."','".$_POST['stu_add1']."','".$_POST['stu_add_locality']."','".$_POST['stu_add_city']."','".$_POST['stu_add_state']."','".$_POST['stu_add_pincode']."','".$_POST['stu_add_country']."','".$_POST['stu_father_name']."','".$_POST['stu_father_number']."','".$_POST['stu_father_email']."',,'".$_POST['stu_mother_name']."','".$_POST['stu_mother_number']."','".$_POST['stu_mother_email']."','$path')";
-					$ans=mysqli_query($conn,$str_up)or die(mysqli_error($conn));
-					if($ans){
-						echo("data entered");
-					}
-
-				}
-				
-			}
+			if(empty($_FILES['stu_img']['name'])) echo "pls select a Image";
+			else if($_FILES['stu_img']['size']>1024*1024) echo "file size exceeded";
 			else{
-				echo("error in file upload");
+				$arr= array("image/jpeg","image/pjpeg","image/png","image/gif");//mime file types
+				if(in_array($_FILES['stu_img']['type'], $arr)){
+					
+					$tmp=$_FILES['stu_img']['tmp_name'];
+					$path="student_img\ ".$_FILES['stu_img']['name'];
+					$file_upload=move_uploaded_file($tmp, $path);
+					if($file_upload){
+						
+						$str_up="Insert into students(stu_id,stu_email,stu_password,stu_fname,stu_mname,stu_lname,stu_dob,stu_gender,stu_blood,stu_year,stu_division,stu_branch,stu_add1,stu_add_locality,stu_add_city,stu_add_state,stu_add_pincode,stu_add_country,stu_father_name,stu_father_number,stu_father_email,stu_mother_name,stu_mother_number,stu_mother_email,stu_img_path)values('$stuid','".$_POST['stu_email']."','$password','".$_POST['stu_fname']."','".$_POST['stu_mname']."','".$_POST['stu_lname']."','".$_POST['stu_dob']."','".$_POST['stu_gender']."','".$_POST['stu_blood']."','".$_POST['stu_year']."','".$_POST['stu_division']."','".$_POST['stu_branch']."','".$_POST['stu_add1']."','".$_POST['stu_add_locality']."','".$_POST['stu_add_city']."','".$_POST['stu_add_state']."','".$_POST['stu_add_pincode']."','".$_POST['stu_add_country']."','".$_POST['stu_father_name']."','".$_POST['stu_father_number']."','".$_POST['stu_father_email']."','".$_POST['stu_mother_name']."','".$_POST['stu_mother_number']."','".$_POST['stu_mother_email']."','$path')";
+						$ans=mysqli_query($conn,$str_up)or die(mysqli_error($conn));
+						if($ans){
+							echo("data entered");
+							header("location:login.php");
+						}
+
+					}
+					
+				}
+				else{
+					echo("error in file upload");
+				}
 			}
 		}
-	}
 	}
 ?>
