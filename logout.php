@@ -6,5 +6,4 @@
 	unset($_SESSION['user_img_path']);
 	session_destroy();
 	header("location:index.php");
-
 ?>

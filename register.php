@@ -13,35 +13,51 @@
       <div class="form-group col-md-12">
         <label> Enter Roll-no.</label>
         <input type="text" class="form-control" name="stu_id" placeholder="Enter rollno">
+        <div id="stu_feedback" class="invalid-feedback">Enter valid Roll no</div>
+        <!-- <input type="text" class="form-control col-md-6" name="stu_id" placeholder="Enter rollno"> -->
+
       </div>
       <div class="form-group col-md-12">
       <label> Enter Somaiya Email-id</label>
         <input type="email" class="form-control" name="stu_email" placeholder="Eg : abcd@somaiya.edu">
+        <div class="invalid-feedback">Enter valid email id</div>
       </div>
       <div class="form-group col-md-12">
         <label> Enter New Password</label>
         <input type="password" class="form-control" name="stu_password" placeholder="Enter new Password">
+        <div class="invalid-feedback">Enter valid password</div>
       </div>
       <div class="form-group col-md-12">
         <label> Confirm New Password</label>
         <input type="password" class="form-control" name="stu_cpassword" placeholder="Confirm new Password">
+        <div class="invalid-feedback">password does not match</div>
       </div>
-      <div class=" form-group col-md-12">
-        <label>Name of Student</label>
-          <div class="form-check-inline">
-            <input type="text" class="form-control col-md-4" name="stu_fname" placeholder="Enter First Name">
-            <input type="text" class="form-control col-md-4" name="stu_mname" placeholder="Enter Middle Name">
-            <input type="text" class="form-control col-md-4" name="stu_lname" placeholder="Enter Last Name">
-          </div>  
+      <div class=" form-row col-md-12">
+        <label class="col-md-12">Name of Student</label>
+          <!-- <div class="form-check-inline"> -->
+          <div class="form-group col-md-4">
+            <input type="text" class="form-control" name="stu_fname" placeholder="Enter First Name" >
+            <div class="invalid-feedback">enter valid name</div>
+          </div>
+          <div class="form-group col-md-4">
+            <input type="text" class="form-control" name="stu_mname" placeholder="Enter Middle Name">
+            <div class="invalid-feedback">enter valid name</div>
+          </div>
+          <div class="form-group col-md-4">
+            <input type="text" class="form-control" name="stu_lname" placeholder="Enter Last Name">
+            <div class="invalid-feedback">enter valid name</div>
+          </div>
+
+          <!-- </div> -->  
       </div>
-      <div class="form-check-inline col-md-12">
+      <div class="form-row col-md-12">
         <div class="form-group col-md-6">
           <label>Date of Birth</label>
-          <input type="date" class="form-control" name="stu_dob" placeholder="Enter Date of Birth">
+          <input type="date" class="form-control" name="stu_dob" placeholder="Enter Date of Birth" required="true">
         </div>
         <div class="form-group col-md-6">
           <label>Gender</label>
-          <select name="stu_gender" class="form-control">
+          <select name="stu_gender" class="form-control" required="true">
             <option value="0">Please select </option>
             <option value="1">male</option>
             <option value="2">female</option>
@@ -50,14 +66,26 @@
 
         </div>
       </div>
-      <div class="form-check-inline col-md-12">
+      <div class="form-row col-md-12">
         <div class="form-group col-md-6">
             <label> Blood Group</label>
-            <input type="text" class="form-control" name="stu_blood" placeholder="Eg:- O+">
+            <!-- <input type="text" class="form-control" name="stu_blood" placeholder="Eg:- O+"> -->
+            <select class="form-control" name="stu_blood" required="true">
+                <option value="0">Please Select</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">A-B</option>
+
+            </select>
         </div>
         <div class="form-group col-md-6">
             <label>Year</label>
-            <select name="stu_year" class="form-control">
+            <select name="stu_year" class="form-control" required="true">
                 <option value="0">Please Select </option>
                 <option value="1">FE</option>
                 <option value="2">SE</option>
@@ -66,14 +94,20 @@
             </select>
         </div>
       </div>
-      <div class="form-check-inline col-md-12">
+      <div class="form-row col-md-12">
             <div class="form-group col-md-6">
                 <label>Divison</label>
                 <input type="text" class="form-control" name="stu_division" placeholder="Enter your division">
+                <div class="invalid-feedback">enter valid Division in Caps</div>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Year Of Joining</label>
+                <input type="text" class="form-control" name="stu_year_of_joining" placeholder="Enter your year of joining">
+                <div class="invalid-feedback">enter valid year</div>
             </div>
             <div class="form-group col-md-6">
                 <label> Branch</label>
-                 <select name="stu_branch" class="form-control">
+                 <select name="stu_branch" class="form-control" required="true">
                     <option value="0">Please Select </option>
                     <option value="1">COMPS</option>
                     <option value="2">IT</option>
@@ -91,31 +125,37 @@
 
       <div class="form-group col-md-12">
         <label>Flat no/house no/bldg</label>
-        <input type="text" class="form-control" name="stu_add1" placeholder=" Address line 1">
+        <input type="text" class="form-control" name="stu_add1" placeholder=" Address line 1" required="true">
       </div>
       <div class="form-group col-md-12  ">
         <label> Locality/Area/Street</label>
-        <input type="text" class="form-control" name="stu_add_locality" placeholder="Address line 2">
+        <input type="text" class="form-control" name="stu_add_locality" placeholder="Address line 2" required="true">
       </div>
-      <div class="form-check-inline col-md-12">
+      <div class="form-row col-md-12">
         <div class="form-group col-md-6">
           <label>City</label>
-          <input type="text" class="form-control" name="stu_add_city">
+          <input type="text" class="form-control" name="stu_add_city" required="true">
+        </div>
+        <div class="form-group col-md-6">
+          <label>District</label>
+          <input type="text" class="form-control" name="stu_add_district" required="true">
         </div>
         <div class="form-group col-md-6">
           <label>State/Province</label>
-          <input type="text" class="form-control" name="stu_add_state">
+          <input type="text" class="form-control" name="stu_add_state" required="true">
         </div>
       </div>
-      <div class="form-check-inline col-md-12">
+      <div class="form-row col-md-12">
         <div class="form-group col-md-6">
-          <label>Pin code</label>
-          <input type="text" class="form-control" name="stu_add_pincode" placeholder="******">
+            <label>Pin code</label>
+            <input type="text" class="form-control" name="stu_add_pincode" placeholder="******">
+            <div class="invalid-feedback">enter valid pincode</div>
+
         </div>
         <div class="form-group col-md-6">
           <label>Country</label>
-          <select name="stu_add_country" class="form-control">
-            <option value="">Please Select </option>
+          <select name="stu_add_country" class="form-control" required="true">
+            <option value="0">Please Select </option>
             <option value="4">Afghanistan</option>
             <option value="248">Åland Islands</option>
             <option value="8">Albania</option>
@@ -372,33 +412,39 @@
       <hr>
       <div class="form-group col-md-12">
          <label>Father's Name</label>
-        <input type="text" class="form-control" name="stu_father_name" placeholder="First Middle Last">
+        <input type="text" class="form-control" name="stu_father_name" placeholder="First Middle Last" required="true">
+        <div class="invalid-feedback">enter valid name</div>
+
       </div>
       <div class="form-group col-md-12">
-         <label>Father's Number</label>
+        <label>Father's Number</label>
         <input type="text" class="form-control" name="stu_father_number" placeholder="Enter 10 digit number">
+        <div class="invalid-feedback">enter valid number</div>
       </div>
       <div class="form-group col-md-12">
       <label> Enter Father's Email-id</label>
         <input type="email" class="form-control" name="stu_father_email" placeholder="Eg : abcd@amail.com">
+        <div class="invalid-feedback">enter valid email</div>
       </div>
       <div class="form-group col-md-12">
          <label>Mother's Name</label>
-        <input type="text" class="form-control" name="stu_mother_name" placeholder="First Middle Last">
+        <input type="text" class="form-control" name="stu_mother_name" placeholder="First Middle Last" required="true">
       </div>
        <div class="form-group col-md-12">
          <label>Mother's Number</label>
         <input type="text" class="form-control" name="stu_mother_number" placeholder="Enter 10 digit number">
+        <div class="invalid-feedback">enter valid number</div>
       </div>
       <div class="form-group col-md-12">
       <label> Enter Mother's Email-id</label>
         <input type="email" class="form-control" name="stu_mother_email" placeholder="Eg : abcd@amail.com">
+        <div class="invalid-feedback">enter valid email</div>
       </div>
 
 
       <div class="form-group col-md-12">
         <label>Upload your photo here:(Type: .jpg)</label>
-        <input type="file" class="form-control" name="stu_img" >
+        <input type="file" class="form-control" name="stu_img" required="true">
       </div>
       
       <input type="submit" id="stu_sub" value="submit">

@@ -61,9 +61,7 @@
               <a class="nav-link" href="logout.php" style="color: #000;">Logout</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="details.php">
-              <img src="<?php echo($_SESSION['user_img_path']) ?>" class="img-circle" width="30px" height="30px" >  
-              </a>
+              <img id="user_img" src="<?php echo($_SESSION['user_img_path']) ?>" class="img-circle" width="30px" height="30px" >  
             </li>
             <?php  
               endif;
