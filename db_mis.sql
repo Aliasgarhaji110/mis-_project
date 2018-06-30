@@ -26,5 +26,18 @@ create table students(
  stu_mother_number bigint,
  stu_mother_email varchar(100),
  stu_img_path text,
+ stu_status int default 1,
  stu_timestamp timestamp
 );
+
+create table main_activity(
+	main_act_id int auto_increment primary key,
+	main_act_name varchar(100),
+	main_act_time timestamp
+);
+
+create table edit_activity(
+	edit_act_id int auto_increment primary key,
+	edit_act_name varchar(100),
+	edit_act_time timestamp
+)

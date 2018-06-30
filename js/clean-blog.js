@@ -401,4 +401,34 @@ $(function(){
     }
   })
 
+  $("#edit_act").click(function(a){
+    // alert(1);
+    a.preventDefault();
+    $.post("edit_activity.php",function(response){
+      // alert(response);
+      $("#element_entry").html(response);
+      // window.location.href="send_sms.php";
+    })
+  })
+
+  $(document).on("click","#submit_edit",function(a){
+    // alert(1)
+    rec=$("#edit_act").serialize();
+    // alert(rec)
+    $.ajax({
+      type:"post",
+      data:rec,
+      url:"actions/edit_act_actions.php",
+      success:function(response){
+        if(response=='ok'){
+          window.location.reload();
+        }
+        alert(response);
+      },
+      error:function(err){
+        alert(err);
+      }
+    })
+  })
+
 });

@@ -72,5 +72,29 @@
       </div>
     </nav>
 
+    <?php  
+      if((isset($_SESSION['user_status']))&&($_SESSION['user_status']==0)):
+    ?>
+  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="margin-top:50px" >
+      <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item" style="color: #eee">
+              <a class="nav-link" id="edit_act" href="edit_activity.php" style="color: #eee;">Edit Activity list</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <?php  
+      endif;
+    ?>
+
     <!-- Page Header -->
       
