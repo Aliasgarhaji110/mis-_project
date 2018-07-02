@@ -9,7 +9,7 @@ create table students(
  stu_gender int,
  stu_blood varchar(10),
  stu_year int,
- stu_year_of_joining date,
+ stu_year_of_joining int,
  stu_division varchar(10),
  stu_branch int,
  stu_add1 varchar(100),
@@ -36,8 +36,9 @@ create table main_activity(
 	main_act_time timestamp
 );
 
-create table edit_activity(
-	edit_act_id int auto_increment primary key,
-	edit_act_name varchar(100),
-	edit_act_time timestamp
-)
+create table add_type_activity(
+	add_type_act_id int auto_increment primary key,
+	add_type_act_name varchar(100),
+	add_type_main_act_id,
+	add_type_act_time timestamp
+);

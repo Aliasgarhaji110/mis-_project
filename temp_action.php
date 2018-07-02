@@ -1,13 +1,12 @@
 <?php  
-    require_once '../db_connect.php';
+    require_once 'db_connect.php';
+    $t_date=strtotime($_POST['temp_stu_date']);
+    $f_date=date('y-m-d',$t_date);
+    // var_dump($f_date);
 
-    if(!preg_match("/^[1-9][0-9]{6}$/", $_POST['stu_id']))echo("incorrect id");
-	// else if (!preg_match("/^[a-zA-Z1-9][a-zA-Z0-9]{6,15}$/",$_POST['stu_password'])) echo $msg = "Please enter valid password";
-	
-    else{
-        $stuid=$_POST['stu_id'];
-        // $password=sha1($_POST['stu_password']);
 
-        echo("ok");
-    }
+    $ent=mysqli_query($conn,"insert into temp(t_date) values ('$f_date')") or die(mysqli_error($conn));
+	if($ent){
+		echo("ok");
+	}
 ?>

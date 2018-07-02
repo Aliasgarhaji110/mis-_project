@@ -85,7 +85,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item" style="color: #eee">
-              <a class="nav-link" id="edit_act" href="edit_activity.php" style="color: #eee;">Edit Activity list</a>
+              <a class="nav-link" id="add_type_act" href="#" style="color: #eee;">Add Activity list</a>
             </li>
           </ul>
         </div>

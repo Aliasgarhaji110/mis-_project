@@ -92,6 +92,16 @@ $(function(){
 
     // jQuery("input[name~='stu_email']").addClass("is-invalid");
 
+
+  $("#submit_temp").click(function(){
+    temp_date=$("stu_temp").serialize();
+    // alert(temp_date);
+    $.post("temp_action.php","temp_stu_date="+temp_date,function(msg){
+      alert(msg)
+    })
+
+  })
+
   var flag=true;
 
 
@@ -401,34 +411,56 @@ $(function(){
     }
   })
 
-  $("#edit_act").click(function(a){
+  $("#add_type_act").click(function(a){
     // alert(1);
     a.preventDefault();
-    $.post("edit_activity.php",function(response){
+    $.post("filters/add_activity_filter.php",function(response){
       // alert(response);
       $("#element_entry").html(response);
       // window.location.href="send_sms.php";
     })
   })
+  $("#pd_button").click(function(a){    // alert(1);
+    a.preventDefault();
+    $.post("filters/personal_details_filter.php",function(response){
+      // alert(response);
+      $("#element_entry").html(response);
+      // window.location.href="send_sms.php";
+    })
+  })
+  $("#sa_button").click(function(a){
+    // alert(1);
+    a.preventDefault();
+     // alert(response);
+      $("#element_entry").html(" ");
+      // window.location.href="send_sms.php";
+  })
 
-  $(document).on("click","#submit_edit",function(a){
+  $(document).on("click","#add_type_act_button",function(a){
     // alert(1)
-    rec=$("#edit_act").serialize();
+    rec=$("#add_type_act_form").serialize();
     // alert(rec)
     $.ajax({
       type:"post",
       data:rec,
-      url:"actions/edit_act_actions.php",
+      url:"actions/add_type_activity_action.php",
       success:function(response){
-        if(response=='ok'){
-          window.location.reload();
-        }
         alert(response);
+        
       },
       error:function(err){
-        alert(err);
+        console.log(err);
       }
     })
   })
+
+  $("#sa_act_edit").click(function(a){
+    a.preventDefault();
+    $.post("filters/sa_act_edit_filter.php",function(response){
+      $("#element_entry").html(response);
+    })
+
+  })
+
 
 });
