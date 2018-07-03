@@ -435,10 +435,20 @@ $(function(){
       $("#element_entry").html(" ");
       // window.location.href="send_sms.php";
   })
-
-  $(document).on("click","#add_type_act_button",function(a){
+  $(document).on("focusout",".check_name",function(a){
+    var rec= $(this).val();
+    if(!rec){
+      // alert(1)
+      $(this).addClass('is-invalid');
+      $(".invalid-feedback").html("Please enter Valid Name");
+      flag=false;
+    }
+  })
+  $(document).on("submit","#add_type_act_form",function(a){
     // alert(1)
-    rec=$("#add_type_act_form").serialize();
+    a.preventDefault();
+    if(flag){
+      rec=$("#add_type_act_form").serialize();
     // alert(rec)
     $.ajax({
       type:"post",
@@ -446,21 +456,26 @@ $(function(){
       url:"actions/add_type_activity_action.php",
       success:function(response){
         alert(response);
-        
+        window.location.reload();
       },
       error:function(err){
         console.log(err);
       }
     })
+    }
   })
-
   $("#sa_act_edit").click(function(a){
     a.preventDefault();
     $.post("filters/sa_act_edit_filter.php",function(response){
       $("#element_entry").html(response);
     })
-
   })
+  // $(document).on("click",".act_list_item",function(a){
+  //   a.preventDefault();
+  //   // alert(1);
+  //   var rec=$(this).attr('for');
+  //   alert(rec)
+  // })
 
 
 });

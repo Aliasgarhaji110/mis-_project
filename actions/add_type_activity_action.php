@@ -19,7 +19,7 @@
 			// echo($str);
 			$ent=mysqli_query($conn,$str);
 			if($ent){
-				echo("ok");
+				echo("Activity Added");
 			}
 			// echo("arg1");
 		}

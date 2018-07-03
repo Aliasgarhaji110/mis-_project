@@ -10,7 +10,8 @@
       <form id="add_type_act_form" method="post" enctype="multipart/form-data" style="margin-top: 20px;">
         <div class="form-group col-md-12">
           <label> Enter Activity Name</label>
-          <input type="text" class="form-control" name="add_type_act_name" placeholder="Eg: Internship" required="true">
+          <input type="text" class="form-control check_name" name="add_type_act_name" placeholder="Eg: Internship" >
+          <div class="invalid-feedback"></div>
         </div>
         <div class="form-group col-md-12">
           <label> Select Activity Type</label>
@@ -29,7 +30,7 @@
           </select>
         </div>
         <div class="form-group col-md-12">
-          <input type="button" id="add_type_act_button" value="submit">
+          <input type="submit" id="add_type_act_button" value="submit">
         </div>
 
       </form>

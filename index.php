@@ -30,19 +30,11 @@
 				  </h5>
 				</div>
 
-				<!-- <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
-				  <div class="card-body">
-				    <ul>
-				    	<li>persnal details</li>
-				    	<li>persnal details</li>
-				    	<li>persnal details</li>
-				    	<li>persnal details</li>
+				<div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordion">
 
-				    </ul>
-				  </div>
-				</div> -->
+				</div>
 			</div>
-			<div class="card" >
+			<div class="card">
 				<div class="card-header" id="heading2">
 				  <h5 class="mb-0">
 				    <button class="btn btn-link" id="sa_button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
@@ -54,8 +46,8 @@
 				<div id="collapse2" class="collapse " aria-labelledby="heading2" data-parent="#accordion">
 				  <div class="card-body">
 				    <ul style="list-style: none">
-					    <li id="sa_act_edit"><a href="#">Add/Edit</a></li>
-					    <li><a href="#">View</a></li>
+					    <li id="sa_act_edit"><a href="#">Add</a></li>
+					    <li><a href="#">View/Edit</a></li>
 				    </ul>
 				  </div>
 				</div>
@@ -83,7 +75,7 @@
 			</div> -->				
 		</div>
   	</div>
-  	<div class="col-md-9">
+  	<div class="col-md-9" style="min-height: 500px">
   		<div class="row" id="element_entry"></div>
   	</div>
 
