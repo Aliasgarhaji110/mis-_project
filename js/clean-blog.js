@@ -371,6 +371,39 @@ $(function(){
     }
     // alert(1)
   });
+  $(document).on("focusout",".check_name",function(a){
+    var pattern = /^[a-zA-Z ]{1,}$/;
+    var fname = $(this).val();
+    if (!(pattern.test(fname) && fname !== '')) {
+      flag=false;
+      $(this).addClass('is-invalid');
+    } else {
+      flag=true;
+      $(this).removeClass('is-invalid');
+    }
+  })
+  $(document).on("focusout",".check_email",function(a){
+    var pattern = /^([a-zA-Z0-9][a-zA-Z0-9_\.]+[a-zA-Z0-9])@([a-zA-Z0-9][a-zA-Z0-9\-]+[a-zA-Z0-9])\.([a-zA-Z0-9]{2,})(\.[a-zA-Z]{2,})?$/;
+    var fname = $(this).val();
+    if (!(pattern.test(fname) && fname !== '')) {
+      flag=false;
+      $(this).addClass('is-invalid');
+    } else {
+      flag=true;
+      $(this).removeClass('is-invalid');
+    }
+  })
+  $(document).on("focusout",".check_number",function(a){
+    var pattern = /^[1-9][0-9]{9}$/;
+    var fname = $(this).val();
+    if (!(pattern.test(fname) && fname !== '')) {
+      flag=false;
+      $(this).addClass('is-invalid');
+    } else {
+      flag=true;
+      $(this).removeClass('is-invalid');
+    }
+  })
 
 
   $("#stu_credentials").submit(function(a){
@@ -435,15 +468,7 @@ $(function(){
       $("#element_entry").html(" ");
       // window.location.href="send_sms.php";
   })
-  $(document).on("focusout",".check_name",function(a){
-    var rec= $(this).val();
-    if(!rec){
-      // alert(1)
-      $(this).addClass('is-invalid');
-      $(".invalid-feedback").html("Please enter Valid Name");
-      flag=false;
-    }
-  })
+  
   $(document).on("submit","#add_type_act_form",function(a){
     // alert(1)
     a.preventDefault();
@@ -470,12 +495,50 @@ $(function(){
       $("#element_entry").html(response);
     })
   })
-  // $(document).on("click",".act_list_item",function(a){
-  //   a.preventDefault();
-  //   // alert(1);
-  //   var rec=$(this).attr('for');
-  //   alert(rec)
-  // })
+  $(document).on("click",".act_list_item",function(a){
+    a.preventDefault();
+    // alert(1);
+    var rec=$(this).attr('for');
+    // alert(rec)
+    switch(rec){
+      case '2':$.post("filters/internship_form_filter.php",function(msg){
+                  $("#element_entry").html(msg);
+                });
+              break;
+    }
+
+  })
+
+  $(document).on("submit","#internship_form",function(a){
+    // alert(1)
+    a.preventDefault();
+    if(flag){
+      rec=new FormData(this);
+      $.ajax({
+        type:"post",
+        data:rec,
+        url:"actions/internship_action.php",
+        contentType:false,
+        cache:false,
+        processData:false,
+        success:function(abc){
+          alert(abc);
+          
+          if(abc =='data entered'){
+            $.post("filters/internship_form_filter.php",function(msg){
+              $("#element_entry").html(msg);
+            });
+          }
+          else{
+            alert(abc);
+          }
+        },
+        error:function(err){
+          console.log(err);
+        }
+      })
+    }
+  })
 
 
 });

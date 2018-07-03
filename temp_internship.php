@@ -3,7 +3,7 @@
 ?>
 
 <!-- Main Content -->
-<div class="container" style="margin-top: 100px;">
+<div class="container">
 	<div class="row">
    		<div class="col-md-6">
 	     	<form id="temp_add_intership_form" method="post" enctype="multipart/form-data" action="actions/temp_internship_action.php">

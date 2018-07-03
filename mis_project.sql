@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 30, 2018 at 02:11 PM
+-- Generation Time: Jul 03, 2018 at 08:35 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -25,14 +25,55 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `edit_activity`
+-- Table structure for table `add_type_activity`
 --
 
-CREATE TABLE `edit_activity` (
-  `edit_act_id` int(11) NOT NULL,
-  `edit_act_name` varchar(100) DEFAULT NULL,
-  `edit_act_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+CREATE TABLE `add_type_activity` (
+  `add_type_act_id` int(11) NOT NULL,
+  `add_type_act_name` varchar(100) DEFAULT NULL,
+  `add_type_main_act_id` int(11) DEFAULT NULL,
+  `add_type_act_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `add_type_activity`
+--
+
+INSERT INTO `add_type_activity` (`add_type_act_id`, `add_type_act_name`, `add_type_main_act_id`, `add_type_act_time`) VALUES
+(2, 'Internship', 2, '2018-07-02 11:02:32'),
+(3, 'Projects', 2, '2018-07-03 02:56:05'),
+(4, 'Sports', 1, '2018-07-03 02:58:41'),
+(5, 'cultural Councils', 1, '2018-07-03 03:02:35'),
+(6, 'Technical Councils', 2, '2018-07-03 03:05:39'),
+(8, 'Cultural Activities', 1, '2018-07-03 03:10:04'),
+(9, 'Social Service', 1, '2018-07-03 05:54:03');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `internship`
+--
+
+CREATE TABLE `internship` (
+  `internship_id` int(11) NOT NULL,
+  `internship_stu_id` bigint(20) DEFAULT NULL,
+  `internship_start_date` text,
+  `internship_end_date` text,
+  `internship_duration` int(11) DEFAULT NULL,
+  `internship_org` varchar(100) DEFAULT NULL,
+  `internship_super_name` varchar(100) DEFAULT NULL,
+  `internship_super_email` varchar(100) DEFAULT NULL,
+  `internship_super_number` varchar(100) DEFAULT NULL,
+  `internship_lor_path` text,
+  `internship_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `internship`
+--
+
+INSERT INTO `internship` (`internship_id`, `internship_stu_id`, `internship_start_date`, `internship_end_date`, `internship_duration`, `internship_org`, `internship_super_name`, `internship_super_email`, `internship_super_number`, `internship_lor_path`, `internship_timestamp`) VALUES
+(1, 1513075, '2018-07-03', '2018-07-13', 10, 'Adnan Enterprises', 'Abdultaiyeb Dedhawala', 'abcd@gmail.com', '9638527410', 'docs/internshipkunjpdf.pdf', '2018-07-03 18:31:59');
 
 -- --------------------------------------------------------
 
@@ -67,11 +108,11 @@ CREATE TABLE `students` (
   `stu_fname` varchar(100) DEFAULT NULL,
   `stu_mname` varchar(100) DEFAULT NULL,
   `stu_lname` varchar(100) DEFAULT NULL,
-  `stu_dob` date DEFAULT NULL,
+  `stu_dob` varchar(10) DEFAULT NULL,
   `stu_gender` int(11) DEFAULT NULL,
   `stu_blood` varchar(10) DEFAULT NULL,
   `stu_year` int(11) DEFAULT NULL,
-  `stu_year_of_joining` date DEFAULT NULL,
+  `stu_year_of_joining` int(11) DEFAULT NULL,
   `stu_division` varchar(10) DEFAULT NULL,
   `stu_branch` int(11) DEFAULT NULL,
   `stu_add1` varchar(100) DEFAULT NULL,
@@ -97,18 +138,43 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`stu_id`, `stu_email`, `stu_password`, `stu_fname`, `stu_mname`, `stu_lname`, `stu_dob`, `stu_gender`, `stu_blood`, `stu_year`, `stu_year_of_joining`, `stu_division`, `stu_branch`, `stu_add1`, `stu_add_locality`, `stu_add_city`, `stu_add_district`, `stu_add_state`, `stu_add_pincode`, `stu_add_country`, `stu_father_name`, `stu_father_number`, `stu_father_email`, `stu_mother_name`, `stu_mother_number`, `stu_mother_email`, `stu_img_path`, `stu_timestamp`, `stu_status`) VALUES
-(1513075, 'adnan.d@somaiya.edu', '7c222fb2927d828af22f592134e8932480637c0d', 'Adnan', 'Abdultaiyeb', 'Dedhawala', '0000-00-00', 1, 'O+', 4, '0000-00-00', 'A', 3, '405,Fakhri Manzil', 'Saifee park,Andheri-east', 'Mumbai', 'Mumbai', 'Maharashtra', 400059, 44, 'Abdultaiyeb', 9999888889, 'abc@gmail.com', 'jumana', 7777788888, 'zainab_74@gmail.com', 'student_img/single_2.jpg', '2018-06-30 10:34:11', 0),
-(1513082, 'abc@somaiya.edu', '4c9b755dfffefb1e926ff835b38f1088a09b9715', 'Niti', 'Virendra', 'Patel', '0000-00-00', 2, 'A+', 2, '0000-00-00', 'B', 3, '501SJWWHIDGSSS', 'SJWBFIRIGFAAA', 'Mumbai', 'Mumbai', 'Maharashtra', 400059, 356, 'Virendra Patel', 9999888778, 'vqqp@gmail.com', 'Daksha Patel', 2223331235, 'fwafd@gmail.com', 'student_img/blog_2.jpg', '2018-06-30 10:34:26', 0);
+(1513075, 'adnan.d@somaiya.edu', '7c222fb2927d828af22f592134e8932480637c0d', 'Adnan', 'Abdultaiyeb', 'Dedhawala', '1997-08-03', 1, 'O+', 4, 2015, 'A', 3, '405,Fakhri Manzil', 'Saifee park,Andheri-east', 'Mumbai', 'Mumbai', 'Maharashtra', 400059, 44, 'Abdultaiyeb', 9999888889, 'abc@gmail.com', 'jumana', 7777788888, 'zainab_74@gmail.com', 'student_img/single_2.jpg', '2018-07-02 07:42:13', 0),
+(1513082, 'abc@somaiya.edu', '4c9b755dfffefb1e926ff835b38f1088a09b9715', 'Niti', 'Virendra', 'Patel', '1997-08-03', 2, 'A+', 2, 2015, 'B', 3, '501SJWWHIDGSSS', 'SJWBFIRIGFAAA', 'Mumbai', 'Mumbai', 'Maharashtra', 400059, 356, 'Virendra Patel', 9999888778, 'vqqp@gmail.com', 'Daksha Patel', 2223331235, 'fwafd@gmail.com', 'student_img/blog_2.jpg', '2018-07-02 07:42:20', 0),
+(1513750, 'niti.p@somaiya.edu', '64e40f4d6ed5fad216ecf5e83fd20831d9ff3e8d', 'Zainab', 'Hussian', 'Khokawala', '1997-08-26', 2, 'B+', 4, 2015, 'B', 3, '201/B,Spence Lane', 'Byculla(W)', 'Mumbai', 'Mumbai', 'Maharashtra', 400068, 356, 'Hussian Khokawala', 9879451223, 'hkhoka@gmail.com', 'Tasneem Khokawala', 7894556122, 'th.khoka@gmail.com', 'student_img/New Doc 2017-06-02 (1).jpg', '2018-07-02 08:50:51', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `temp`
+--
+
+CREATE TABLE `temp` (
+  `t_date` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `temp`
+--
+
+INSERT INTO `temp` (`t_date`) VALUES
+('2018-07-03'),
+('1970-01-01');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `edit_activity`
+-- Indexes for table `add_type_activity`
 --
-ALTER TABLE `edit_activity`
-  ADD PRIMARY KEY (`edit_act_id`);
+ALTER TABLE `add_type_activity`
+  ADD PRIMARY KEY (`add_type_act_id`);
+
+--
+-- Indexes for table `internship`
+--
+ALTER TABLE `internship`
+  ADD PRIMARY KEY (`internship_id`);
 
 --
 -- Indexes for table `main_activity`
@@ -127,10 +193,15 @@ ALTER TABLE `students`
 --
 
 --
--- AUTO_INCREMENT for table `edit_activity`
+-- AUTO_INCREMENT for table `add_type_activity`
 --
-ALTER TABLE `edit_activity`
-  MODIFY `edit_act_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `add_type_activity`
+  MODIFY `add_type_act_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `internship`
+--
+ALTER TABLE `internship`
+  MODIFY `internship_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `main_activity`
 --
