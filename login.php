@@ -8,13 +8,15 @@
         <div class="form-group col-md-12">
           <label> Enter Somaiya Email-id</label>
           <input type="email" class="form-control" name="stu_email" placeholder="Eg : abcd@somaiya.edu">
+          <div class="invalid-feedback">Enter valid email id</div>
         </div>
         <div class="form-group col-md-12">
           <label> Enter Password</label>
-          <input type="password" class="form-control" name="stu_password" placeholder="Enter new Password">
+          <input type="password" class="form-control" name="stu_password" placeholder="Enter valid password">
+          <div class="invalid-feedback">Enter valid password</div>
         </div>
         <div class="form-group col-md-12">
-          <input type="submit" id="submit_login" value="submit">
+          <input type="submit" id="submit_login" value="Login">
         </div>
 
       </form>

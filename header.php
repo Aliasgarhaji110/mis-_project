@@ -30,9 +30,9 @@
   <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" >
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color:    #303030">
       <div class="container">
-        <a class="navbar-brand" href="index.php" style="color: #555;">MIS Project</a>
+        <a class="navbar-brand" href="index.php" style="color: #fff;">K.J.Somaiya College of Engineering(MIS PROJECT)</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -40,16 +40,16 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.php" style="color: #000;">Home</a>
+              <a class="nav-link" href="index.php" style="color: #fff;">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="register.php" style="color: #000;">Register</a>
+              <a class="nav-link" href="register.php" style="color: #fff;">Register</a>
             </li>
             <?php  
               if(!isset($_SESSION['user_img_path'])):
             ?>
             <li class="nav-item">
-              <a class="nav-link" href="login.php" style="color: #000;">Login</a>
+              <a class="nav-link" href="login.php" style="color: #fff;">Login</a>
             </li>
             <?php  
               endif;
@@ -58,7 +58,7 @@
               if(isset($_SESSION['user_img_path'])):
             ?>
             <li class="nav-item">
-              <a class="nav-link" href="logout.php" style="color: #000;">Logout</a>
+              <a class="nav-link" href="logout.php" style="color: #fff;">Logout</a>
             </li>
             <li class="nav-item">
               <img id="user_img" src="<?php echo($_SESSION['user_img_path']) ?>" class="img-circle" width="30px" height="30px" >  

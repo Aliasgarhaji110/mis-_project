@@ -56,7 +56,7 @@
 						$str_up="Insert into students(stu_id,stu_email,stu_password,stu_fname,stu_mname,stu_lname,stu_dob,stu_gender,stu_blood,stu_year,stu_division,stu_branch,stu_add1,stu_add_locality,stu_add_city,stu_add_state,stu_add_pincode,stu_add_country,stu_father_name,stu_father_number,stu_father_email,stu_mother_name,stu_mother_number,stu_mother_email,stu_img_path,stu_add_district,stu_year_of_joining)values('$stuid','".$_POST['stu_email']."','$password','".$_POST['stu_fname']."','".$_POST['stu_mname']."','".$_POST['stu_lname']."','$dob','".$_POST['stu_gender']."','".$_POST['stu_blood']."','".$_POST['stu_year']."','".$_POST['stu_division']."','".$_POST['stu_branch']."','".$_POST['stu_add1']."','".$_POST['stu_add_locality']."','".$_POST['stu_add_city']."','".$_POST['stu_add_state']."','".$_POST['stu_add_pincode']."','".$_POST['stu_add_country']."','".$_POST['stu_father_name']."','".$_POST['stu_father_number']."','".$_POST['stu_father_email']."','".$_POST['stu_mother_name']."','".$_POST['stu_mother_number']."','".$_POST['stu_mother_email']."','$path','".$_POST['stu_add_district']."','".$_POST['stu_year_of_joining']."')";
 						$ans=mysqli_query($conn,$str_up)or die(mysqli_error($conn));
 						if($ans){
-							echo("data entered");
+							echo("Registeration Succesful");
 							// header("location:../login.php");
 						}
 

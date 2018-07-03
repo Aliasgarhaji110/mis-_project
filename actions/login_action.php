@@ -1,8 +1,8 @@
 <?php  
 	require_once '../db_connect.php';
 
-	if (!preg_match("/^([a-zA-Z0-9][a-zA-Z0-9_\.]+[a-zA-Z0-9])@somaiya.edu$/",$_POST['stu_email'])) echo $msg = "pls enter valid email";
-	else if (!preg_match("/^[a-zA-Z1-9][a-zA-Z0-9]{6,15}$/",$_POST['stu_password'])) echo $msg = "Please enter valid password";
+	if (!preg_match("/^([a-zA-Z0-9][a-zA-Z0-9_\.]+[a-zA-Z0-9])@somaiya.edu$/",$_POST['stu_email'])) echo $msg = "Please enter valid email";
+	else if (!preg_match("/^[a-zA-Z1-9][a-zA-Z0-9]{6,15}$/",$_POST['stu_password'])) echo $msg = "Invalid password";
 	else{
 		$cre_res=mysqli_query($conn,"select * from students where stu_email='".$_POST['stu_email']."'") or die(mysqli_error($conn));
 		if($cre_res->num_rows>0){
@@ -21,7 +21,7 @@
 			}
 		}
 		else{
-			echo("entry doesnot exist");
+			echo("Invalid Password or Email-id");
 		}
 
 	}

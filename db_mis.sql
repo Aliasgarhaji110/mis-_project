@@ -42,3 +42,19 @@ create table add_type_activity(
 	add_type_main_act_id,
 	add_type_act_time timestamp
 );
+
+create table temp_intership(
+	temp_internship_id int auto_increment primary key,
+	internship_season varchar(100),
+	internship_start_date date;
+	internship_end_date date;
+	internship_duration varchar(10);
+	internship_org varchar(100);
+	internship_super_name varchar(100);
+	internship_super_email varchar(100);
+	internship_super_number varchar(100);
+	internship_lor_path text,
+	stu_id,
+	add_type_act_id,
+	internship_timestamp timestamp
+);

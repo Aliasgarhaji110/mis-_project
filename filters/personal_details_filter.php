@@ -47,37 +47,9 @@
 			    		<img src="<?php echo("actions/".$cre_ans['stu_img_path']) ?>" width="150px" height="150px" >
 			    	</div>
 		    	</div>
-
+		    
 
 						
-
-
-		    	<div class="row">
-		    		<div class="col-md-6 form-group">
-		    			<div class="row col-md-12 form-inline">
-	    					<label class="form-control col-md-4">DOB :</label>	
-	    					<input class="form-control col-md-8" type="date" class="form-control" value="<?php echo($cre_ans['stu_dob']) ?>" disabled>
-	    				</div>
-		    		</div>
-		    		<div class="col-md-6 form-group">
-		    			
-			    			
-			    				<div class="row col-md-12 form-inline">
-			    					<label class="form-control col-md-6">Blood Group :</label>	
-			    					<input class="form-control col-md-6" type="text" class="form-control" value="<?php echo($cre_ans['stu_blood']) ?>" disabled>
-			    				</div>
-			    			
-			    		
-
-
-		    		</div>
-		    	</div>
-
-
-
-
-
-
 
 
 		    	<div class="row">
@@ -85,8 +57,18 @@
 		    			<div class="col-md-12">
 			    			<div class="form-group">
 			    				<div class="row form-inline">
-			    					<label class="form-control col-md-6">Gender :</label>	
-			    					<input class="form-control col-md-6" type="text" class="form-control" value="<?php switch ($cre_ans['stu_gender']) {
+			    					<label class="form-control col-md-5">DOB :</label>	
+			    					<input class="form-control col-md-7" type="date" class="form-control" value="<?php echo($cre_ans['stu_dob']) ?>" disabled>
+			    				</div>
+			    			</div>
+			    		</div>
+		    		</div>
+		    		<div class="col-md-6">
+		    			<div class="col-md-12">
+			    			<div class="form-group">
+			    				<div class="row form-inline">
+			    					<label class="form-control col-md-5">Gender :</label>	
+			    					<input class="form-control col-md-7" type="text" class="form-control" value="<?php switch ($cre_ans['stu_gender']) {
 			    						case '1':
 			    							echo("Male");
 			    							break;
@@ -105,8 +87,8 @@
 		    			<div class="col-md-12">
 			    			<div class="form-group">
 			    				<div class="row form-inline">
-			    					<label class="form-control col-md-6">Year :</label>	
-			    					<input class="form-control col-md-6" type="text" class="form-control" value="<?php switch ($cre_ans['stu_year']) {
+			    					<label class="form-control col-md-5">Year :</label>	
+			    					<input class="form-control col-md-7" type="text" class="form-control" value="<?php switch ($cre_ans['stu_year']) {
 			    						case '1':
 			    							echo("FE");
 			    							break;
@@ -124,14 +106,12 @@
 			    			</div>
 			    		</div>
 		    		</div>
-		    	</div>
-		    	<div class="row">
 		    		<div class="col-md-6">
 		    			<div class="col-md-12">
 			    			<div class="form-group">
 			    				<div class="row form-inline">
-			    					<label class="form-control col-md-6">Branch :</label>	
-			    					<input class="form-control col-md-6" type="text" class="form-control" value="<?php switch ($cre_ans['stu_branch']) {
+			    					<label class="form-control col-md-5">Branch :</label>	
+			    					<input class="form-control col-md-7" type="text" class="form-control" value="<?php switch ($cre_ans['stu_branch']) {
 			    						case '1':
 			    							echo("COMPS");
 			    							break;
@@ -156,8 +136,18 @@
 		    			<div class="col-md-12">
 			    			<div class="form-group">
 			    				<div class="row form-inline">
-			    					<label class="form-control col-md-6">Division :</label>	
-			    					<input class="form-control col-md-6" type="text" class="form-control" value="<?php echo($cre_ans['stu_division']) ?>" disabled>
+			    					<label class="form-control col-md-5">Division :</label>	
+			    					<input class="form-control col-md-7" type="text" class="form-control" value="<?php echo($cre_ans['stu_division']) ?>" disabled>
+			    				</div>
+			    			</div>
+			    		</div>
+		    		</div>
+		    		<div class="col-md-6">
+		    			<div class="col-md-12">
+			    			<div class="form-group">
+			    				<div class="row form-inline">
+			    					<label class="form-control col-md-5">Blood Group :</label>	
+			    					<input class="form-control col-md-7" type="text" class="form-control" value="<?php echo($cre_ans['stu_blood']) ?>" disabled>
 			    				</div>
 			    			</div>
 			    		</div>
@@ -193,8 +183,8 @@
 		    			<div class="col-md-12">
 			    			<div class="form-group">
 			    				<div class="row form-inline">
-			    					<label class="form-control col-md-6">City :</label>	
-			    					<input class="form-control col-md-6" type="text" class="form-control" value="<?php echo($cre_ans['stu_add_city']) ?>" disabled>
+			    					<label class="form-control col-md-5">City :</label>	
+			    					<input class="form-control col-md-7" type="text" class="form-control" value="<?php echo($cre_ans['stu_add_city']) ?>" disabled>
 			    				</div>
 			    			</div>
 			    		</div>
@@ -203,18 +193,28 @@
 		    			<div class="col-md-12">
 			    			<div class="form-group">
 			    				<div class="row form-inline">
-			    					<label class="form-control col-md-6">Pin Code :</label>	
-			    					<input class="form-control col-md-6" type="text" class="form-control" value="<?php echo($cre_ans['stu_add_pincode']) ?>" disabled>
+			    					<label class="form-control col-md-5">Pin Code :</label>	
+			    					<input class="form-control col-md-7" type="text" class="form-control" value="<?php echo($cre_ans['stu_add_pincode']) ?>" disabled>
 			    				</div>
 			    			</div>
 			    		</div>
 		    		</div>
-		    		<div class="col-md-12">
+		    		<div class="col-md-6">
 		    			<div class="col-md-12">
 				    		<div class="form-group">
 			    				<div class="row form-inline">
 			    					<label class="form-control col-md-5">State :</label>
 			    					<input class="form-control col-md-7" type="text" class="form-control" value="<?php echo($cre_ans['stu_add_state']) ?>" disabled>
+			    				</div>
+				    		</div>
+				    	</div>
+			    	</div>
+			    	<div class="col-md-6">
+		    			<div class="col-md-12">
+				    		<div class="form-group">
+			    				<div class="row form-inline">
+			    					<label class="form-control col-md-5">District :</label>
+			    					<input class="form-control col-md-7" type="text" class="form-control" value="<?php echo($cre_ans['stu_add_district']) ?>" disabled>
 			    				</div>
 				    		</div>
 				    	</div>
