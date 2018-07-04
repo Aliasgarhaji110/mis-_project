@@ -34,10 +34,10 @@
 			        	<option value="2">Co-Curricular</option>
 			       	  </select>
 			    	</div> -->
-			    	<div class="form-group col-md-6">
+			    	<!-- <div class="form-group col-md-6">
 			       		<label>Enter Duration in days</label>
 			       		<input type="text" class="form-control" name="internship_duration" placeholder="Eg: 2 " required="true">		
-			    	</div>
+			    	</div> -->
 			    </div>
 		        <div class="form-group col-md-12">
 			        <label>Enter Name of the Organization/Institute:</label>
@@ -54,15 +54,19 @@
 			        <input type="email" class="form-control check_email" name="internship_super_email" placeholder="Enter email-id of Supervisor">
 			        <div class="invalid-feedback">Enter Email of Supervisor</div>
 		      	</div>
+		      	<div class="form-group col-md-12">
+			        <label>Contact number of Supervisor:</label>
+			        <input type="text" class="form-control check_number" name="internship_super_number" placeholder="Enter number of Supervisor">
+		        	<div class="invalid-feedback">Enter Contact Number of Supervisor</div>
+			    </div>
 		      	<div class="form-row col-md-12">	
-			      	<div class="form-group col-md-6">
-				        <label>Contact number of Supervisor:</label>
-				        <input type="text" class="form-control check_number" name="internship_super_number" placeholder="Enter number of Supervisor">
-			        	<div class="invalid-feedback">Enter Contact Number of Supervisor</div>
-			      	</div>
 					<div class="form-group col-md-6">
-                            <label>Copy of LOR/LOA(Pdf format)</label>
-                            <input type="file" class="form-control" name="internship_lor" required="true">
+                            <label>Copy of Internship Certificate(Pdf format only)</label>
+                            <input type="file" class="form-control" name="internship_certificate" required="true">
+                    </div>
+                    <div class="form-group col-md-6">
+                            <label>Copy of Internship Report(Pdf format only)</label>
+                            <input type="file" class="form-control" name="internship_report" required="true">
                     </div>
                 </div>
                 <input type="submit" id="internship_submit" value="submit">

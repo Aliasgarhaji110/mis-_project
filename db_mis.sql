@@ -48,11 +48,11 @@ create table internship(
 	internship_stu_id bigint,
 	internship_start_date text,
 	internship_end_date text,
-	internship_duration int,
 	internship_org varchar(100),
 	internship_super_name varchar(100),
 	internship_super_email varchar(100),
 	internship_super_number varchar(100),
-	internship_lor_path text,
+	internship_report_path text,
+	internship_certificate_path text,
 	internship_timestamp timestamp
 );

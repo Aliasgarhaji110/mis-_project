@@ -522,7 +522,7 @@ $(function(){
         cache:false,
         processData:false,
         success:function(abc){
-          alert(abc);
+          // alert(abc);
           
           if(abc =='data entered'){
             $.post("filters/internship_form_filter.php",function(msg){
