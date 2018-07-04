@@ -4,18 +4,16 @@
 	$s_date=strtotime($_POST['internship_start_date']);
 	$e_date=strtotime($_POST['internship_end_date']);
 
-
 	if(!preg_match("/^[1-9][0-9]{6}$/", $_POST['stu_id']))echo("incorrect student id");
-
 	else if ($_POST['internship_start_date']== NULL) echo $msg ="Select Start Date";
 	else if (($e_date== NULL)||($s_date>$e_date)) echo $msg ="Select Proper End Date";
 	else if ($_POST['internship_duration']== NULL) echo $msg ="Select no of days";
 
 	else{
-		$sdate=date('yyyy-mm-dd',$s_date);
-		$edate=date('yyyy-mm-dd',$e_date);
+		$sdate=$_POST['internship_start_date'];
+		$edate=$_POST['internship_end_date'];
 		
-		if(empty($_FILES['internship_lor']['name'])) echo "pls select a Image";
+		if(empty($_FILES['internship_lor']['name'])) echo "Please select a Image";
 		else if($_FILES['internship_lor']['size']>1024*1024) echo "file size exceeded";
 		else{
 			$arr= array("application/pdf");//mime file types

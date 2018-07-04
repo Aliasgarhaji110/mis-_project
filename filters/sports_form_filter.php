@@ -4,7 +4,7 @@
 <div class="container">
 	<div class="row">
    		<div class="col-md-12">
-	     	<form id="internship_form" method="post" enctype="multipart/form-data" action="actions/internship_action.php">
+	     	<form id="sports_form" method="post" enctype="multipart/form-data" action="actions/temp_internship_action.php">
 			     
 		    	<h4 class="col-md-12" style="font-weight:bolder;">Enter your Intership Details</h4>
 		    	<hr>
@@ -12,11 +12,11 @@
 		      	<div class="form-row col-md-12">	
 			    	<div class="form-group col-md-6">
 				        <label >Roll-no.</label>
-				        <input type="text" class="form-control" name="stu_id" value="<?php echo($_SESSION['user_id']) ?>" >
+				        <input type="text" class="form-control" name="stu_id" value="<?php echo($_SESSION['user_id']) ?>">
 			    	</div>
 			      	<div class="form-group col-md-6">
 			          <label>Student Name</label>
-			          <input type="text" class="form-control" name="stu_name" value="<?php echo($_SESSION['user_full_name']) ?>" disabled>
+			          <input type="text" class="form-control" name="stu_name" value="<?php echo($_SESSION['user_full_name']) ?>" >
 			    	</div>
 			    	<div class="form-group col-md-6">
 			       		<label>Select Start Date</label>

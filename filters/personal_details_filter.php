@@ -15,7 +15,7 @@
     			<h4 class="col-md-12" style="font-weight:bolder;">Personal Details</h4>
 		    	<hr>
 		    	<div class="row">
-		    		<div class="col-md-8">
+		    		<div class="col-md-10">
 			    		<div class="col-md-12">
 			    			<div class="form-group">
 			    				<div class="row form-inline">
@@ -43,7 +43,7 @@
 			    			</div>
 			    		</div>
 			    	</div>
-			    	<div class="col-md-4">
+			    	<div class="col-md-2">
 			    		<img src="<?php echo("actions/".$cre_ans['stu_img_path']) ?>" width="150px" height="150px" >
 			    	</div>
 		    	</div>
