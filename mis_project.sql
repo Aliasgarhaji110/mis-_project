@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 03, 2018 at 08:35 PM
+-- Generation Time: Jul 04, 2018 at 08:29 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -43,7 +43,7 @@ INSERT INTO `add_type_activity` (`add_type_act_id`, `add_type_act_name`, `add_ty
 (2, 'Internship', 2, '2018-07-02 11:02:32'),
 (3, 'Projects', 2, '2018-07-03 02:56:05'),
 (4, 'Sports', 1, '2018-07-03 02:58:41'),
-(5, 'cultural Councils', 1, '2018-07-03 03:02:35'),
+(5, 'Cultural Councils', 1, '2018-07-04 08:34:12'),
 (6, 'Technical Councils', 2, '2018-07-03 03:05:39'),
 (8, 'Cultural Activities', 1, '2018-07-03 03:10:04'),
 (9, 'Social Service', 1, '2018-07-03 05:54:03');
@@ -59,12 +59,12 @@ CREATE TABLE `internship` (
   `internship_stu_id` bigint(20) DEFAULT NULL,
   `internship_start_date` text,
   `internship_end_date` text,
-  `internship_duration` int(11) DEFAULT NULL,
   `internship_org` varchar(100) DEFAULT NULL,
   `internship_super_name` varchar(100) DEFAULT NULL,
   `internship_super_email` varchar(100) DEFAULT NULL,
   `internship_super_number` varchar(100) DEFAULT NULL,
-  `internship_lor_path` text,
+  `internship_report_path` text,
+  `internship_certificate_path` text,
   `internship_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -72,8 +72,8 @@ CREATE TABLE `internship` (
 -- Dumping data for table `internship`
 --
 
-INSERT INTO `internship` (`internship_id`, `internship_stu_id`, `internship_start_date`, `internship_end_date`, `internship_duration`, `internship_org`, `internship_super_name`, `internship_super_email`, `internship_super_number`, `internship_lor_path`, `internship_timestamp`) VALUES
-(1, 1513075, '2018-07-03', '2018-07-13', 10, 'Adnan Enterprises', 'Abdultaiyeb Dedhawala', 'abcd@gmail.com', '9638527410', 'docs/internshipkunjpdf.pdf', '2018-07-03 18:31:59');
+INSERT INTO `internship` (`internship_id`, `internship_stu_id`, `internship_start_date`, `internship_end_date`, `internship_org`, `internship_super_name`, `internship_super_email`, `internship_super_number`, `internship_report_path`, `internship_certificate_path`, `internship_timestamp`) VALUES
+(1, 1513082, '2018-07-12', '2018-07-17', 'Adnan Enterprises', 'Abdultaiyeb Dedhawala', 'abcd@gmail.com', '9638527410', 'docs/internship/1513082_report_kunjpdf.pdf', 'docs/internship/1513082_certificate_kunjpdf.pdf', '2018-07-04 17:23:47');
 
 -- --------------------------------------------------------
 
@@ -94,6 +94,34 @@ CREATE TABLE `main_activity` (
 INSERT INTO `main_activity` (`main_act_id`, `main_act_name`, `main_act_time`) VALUES
 (1, 'Extra-Curricular', '2018-06-30 10:46:28'),
 (2, 'Co-Curricular', '2018-06-30 10:46:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `social_service`
+--
+
+CREATE TABLE `social_service` (
+  `social_service_id` int(11) NOT NULL,
+  `social_service_stu_id` bigint(20) DEFAULT NULL,
+  `social_service_start_date` text,
+  `social_service_end_date` text,
+  `social_service_org` varchar(100) DEFAULT NULL,
+  `social_service_incharge_name` varchar(100) DEFAULT NULL,
+  `social_service_incharge_email` varchar(100) DEFAULT NULL,
+  `social_service_incharge_number` varchar(100) DEFAULT NULL,
+  `social_service_description` text,
+  `social_service_report_path` text,
+  `social_service_certificate_path` text,
+  `social_service_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `social_service`
+--
+
+INSERT INTO `social_service` (`social_service_id`, `social_service_stu_id`, `social_service_start_date`, `social_service_end_date`, `social_service_org`, `social_service_incharge_name`, `social_service_incharge_email`, `social_service_incharge_number`, `social_service_description`, `social_service_report_path`, `social_service_certificate_path`, `social_service_timestamp`) VALUES
+(1, 1513082, '2018-07-05', '2018-07-05', 'Adnan Welfare', 'Adnan Khan', 'adk@gmail.com', '7894561230', 'qwertyuioplkjhgfdszxcvb\r\nwertyuijbvcfg', 'docs/social_service/1513082_report_kunjpdf.pdf', 'docs/social_service/1513082_certificate_kunjpdf.pdf', '2018-07-04 18:25:29');
 
 -- --------------------------------------------------------
 
@@ -183,6 +211,12 @@ ALTER TABLE `main_activity`
   ADD PRIMARY KEY (`main_act_id`);
 
 --
+-- Indexes for table `social_service`
+--
+ALTER TABLE `social_service`
+  ADD PRIMARY KEY (`social_service_id`);
+
+--
 -- Indexes for table `students`
 --
 ALTER TABLE `students`
@@ -206,7 +240,12 @@ ALTER TABLE `internship`
 -- AUTO_INCREMENT for table `main_activity`
 --
 ALTER TABLE `main_activity`
-  MODIFY `main_act_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
+  MODIFY `main_act_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `social_service`
+--
+ALTER TABLE `social_service`
+  MODIFY `social_service_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
