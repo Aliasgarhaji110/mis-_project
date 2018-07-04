@@ -22,7 +22,7 @@
 			if(in_array($_FILES['internship_lor']['type'], $arr)){
 				
 				$tmp=$_FILES['internship_lor']['tmp_name'];
-				$path="docs/"."internship".$_FILES['internship_lor']['name'];
+				$path="docs/"."internship_".$_FILES['internship_lor']['name'];
 				$file_upload=move_uploaded_file($tmp, $path);
 				if($file_upload){
 					
