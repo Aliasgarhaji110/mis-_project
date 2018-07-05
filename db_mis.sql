@@ -72,3 +72,28 @@ create table social_service(
 	social_service_certificate_path text,
 	social_service_timestamp timestamp
 );
+
+create table tech_council(
+	tech_council_id int auto_increment primary key,
+	tech_council_stu_id bigint,
+	tech_council_start_date text,
+	tech_council_end_date text,
+	tech_council_name varchar(100),
+	tech_council_position varchar(100),
+	tech_council_description text,
+	tech_council_certificate_path text,
+	tech_council_timestamp timestamp
+);
+
+
+create table cultural_council(
+	cultural_council_id int auto_increment primary key,
+	cultural_council_stu_id bigint,
+	cultural_council_start_date text,
+	cultural_council_end_date text,
+	cultural_council_name varchar(100),
+	cultural_council_position varchar(100),
+	cultural_council_description text,
+	cultural_council_certificate_path text,
+	cultural_council_timestamp timestamp
+);

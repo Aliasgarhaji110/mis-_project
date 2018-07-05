@@ -516,6 +516,15 @@ $(function(){
                   $("#element_entry").html(msg);
                 });
               break;
+      case '5':$.post("filters/cultural_council_form_filter.php",function(msg){
+                  $("#element_entry").html(msg);
+                });
+              break;
+      case '6':$.post("filters/tech_council_form_filter.php",function(msg){
+                  $("#element_entry").html(msg);
+                });
+              break;
+
       case '9':$.post("filters/social_service_form_filter.php",function(msg){
                   $("#element_entry").html(msg);
                 });
@@ -587,6 +596,70 @@ $(function(){
       })
     }
   })
+
+  $(document).on("submit","#tech_council_form",function(a){
+    // alert(1)
+    a.preventDefault();
+    if(flag){
+      rec=new FormData(this);
+      $.ajax({
+        type:"post",
+        data:rec,
+        url:"actions/tech_council_action.php",
+        contentType:false,
+        cache:false,
+        processData:false,
+        success:function(abc){
+          // alert(abc);
+          
+          if(abc =='data entered'){
+            $.post("filters/tech_council_form_filter.php",function(msg){
+              $("#element_entry").html(msg);
+            });
+          }
+          else{
+            alert(abc);
+          }
+        },
+        error:function(err){
+          console.log(err);
+        }
+      })
+    }
+  })
+
+$(document).on("submit","#cultural_council_form",function(a){
+    // alert(1)
+    a.preventDefault();
+    if(flag){
+      rec=new FormData(this);
+      $.ajax({
+        type:"post",
+        data:rec,
+        url:"actions/cultural_council_action.php",
+        contentType:false,
+        cache:false,
+        processData:false,
+        success:function(abc){
+          // alert(abc);
+          
+          if(abc =='data entered'){
+            $.post("filters/cultural_council_form_filter.php",function(msg){
+              $("#element_entry").html(msg);
+            });
+          }
+          else{
+            alert(abc);
+          }
+        },
+        error:function(err){
+          console.log(err);
+        }
+      })
+    }
+  })
+
+
 
 
 

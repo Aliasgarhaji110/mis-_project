@@ -15,20 +15,20 @@
     			<h4 class="col-md-12" style="font-weight:bolder;">Personal Details</h4>
 		    	<hr>
 		    	<div class="row">
-		    		<div class="col-md-10">
+		    		<div class="col-md-9">
 			    		<div class="col-md-12">
 			    			<div class="form-group">
 			    				<div class="row form-inline">
-			    					<label class="form-control col-md-4">Roll no :</label>	
-			    					<input class="form-control col-md-8" type="text" class="form-control" value="<?php echo($cre_ans['stu_id']) ?>" disabled>
+			    					<label class="form-control col-md-3">Roll no :</label>	
+			    					<input class="form-control col-md-9" type="text" class="form-control" value="<?php echo($cre_ans['stu_id']) ?>" disabled>
 			    				</div>
 			    			</div>
 			    		</div>
 			    		<div class="col-md-12">
 			    			<div class="form-group">
 			    				<div class="row form-inline">
-			    					<label class="form-control col-md-4">Email :</label>	
-			    					<input class="form-control col-md-8" type="text" class="form-control" value="<?php echo($cre_ans['stu_email']) ?>" disabled>
+			    					<label class="form-control col-md-3">Email :</label>	
+			    					<input class="form-control col-md-9" type="text" class="form-control" value="<?php echo($cre_ans['stu_email']) ?>" disabled>
 			    				</div>
 			    			</div>
 			    		</div>
@@ -43,7 +43,7 @@
 			    			</div>
 			    		</div>
 			    	</div>
-			    	<div class="col-md-2">
+			    	<div class="col-md-3">
 			    		<img src="<?php echo("actions/".$cre_ans['stu_img_path']) ?>" width="150px" height="150px" >
 			    	</div>
 		    	</div>
@@ -284,8 +284,6 @@
 				    	</div>
 			    	</div>
 		    	</div>
-
-
     		</div>
     	</form>
     </div>
