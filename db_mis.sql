@@ -81,7 +81,7 @@ create table tech_council(
 	tech_council_stu_current_year int,
 	tech_council_start_date text,
 	tech_council_end_date text,
-	tech_council_name varchar(100),
+	tech_council_name_id int,
 	tech_council_position varchar(100),
 	tech_council_description text,
 	tech_council_certificate_path text,
@@ -95,9 +95,10 @@ create table cultural_council(
 	cultural_council_stu_current_year int,
 	cultural_council_start_date text,
 	cultural_council_end_date text,
-	cultural_council_name varchar(100),
+	cultural_council_name_id int,
 	cultural_council_position varchar(100),
 	cultural_council_description text,
 	cultural_council_certificate_path text,
 	cultural_council_timestamp timestamp
 );
+
