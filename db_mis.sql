@@ -46,6 +46,7 @@ create table add_type_activity(
 create table internship(
 	internship_id int auto_increment primary key,
 	internship_stu_id bigint,
+	internship_stu_current_year int,
 	internship_start_date text,
 	internship_end_date text,
 	internship_org varchar(100),
@@ -61,6 +62,7 @@ create table internship(
 create table social_service(
 	social_service_id int auto_increment primary key,
 	social_service_stu_id bigint,
+	social_service_stu_current_year int,
 	social_service_start_date text,
 	social_service_end_date text,
 	social_service_org varchar(100),
@@ -76,6 +78,7 @@ create table social_service(
 create table tech_council(
 	tech_council_id int auto_increment primary key,
 	tech_council_stu_id bigint,
+	tech_council_stu_current_year int,
 	tech_council_start_date text,
 	tech_council_end_date text,
 	tech_council_name varchar(100),
@@ -89,6 +92,7 @@ create table tech_council(
 create table cultural_council(
 	cultural_council_id int auto_increment primary key,
 	cultural_council_stu_id bigint,
+	cultural_council_stu_current_year int,
 	cultural_council_start_date text,
 	cultural_council_end_date text,
 	cultural_council_name varchar(100),

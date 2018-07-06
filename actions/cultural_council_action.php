@@ -23,12 +23,12 @@
 				// $tmp=$_FILES['cultural_council_report']['tmp_name'];
 				// $path="docs/cultural_council/".$_SESSION['user_id']."_report_".$_FILES['cultural_council_report']['name'];
 				$tmp1=$_FILES['cultural_council_certificate']['tmp_name'];
-				$path1="docs/cultural_council/".$_SESSION['user_id']."_certificate_".$_FILES['cultural_council_certificate']['name'];
+				$path1="docs/cultural_council/".timestamp()."_".$_SESSION['user_id']."_certificate_".$_FILES['cultural_council_certificate']['name'];
 				// $file_upload=move_uploaded_file($tmp, $path);
 				$file_upload=move_uploaded_file($tmp1, $path1);
 				if($file_upload){
 					
-					$str_up="Insert into cultural_council(cultural_council_stu_id,cultural_council_start_date,cultural_council_end_date,cultural_council_name,cultural_council_position,cultural_council_description,cultural_council_certificate_path)values('".$_POST['stu_id']."','$sdate','$edate','".$_POST['cultural_council_name']."','".$_POST['cultural_council_position']."','".$_POST['cultural_council_description']."','$path1')";
+					$str_up="Insert into cultural_council(cultural_council_stu_id,cultural_council_start_date,cultural_council_end_date,cultural_council_name,cultural_council_position,cultural_council_description,cultural_council_certificate_path,cultural_council_stu_current_year)values('".$_POST['stu_id']."','$sdate','$edate','".$_POST['cultural_council_name']."','".$_POST['cultural_council_position']."','".$_POST['cultural_council_description']."','$path1','".$_POST['stu_year']."')";
 					$ans=mysqli_query($conn,$str_up)or die(mysqli_error($conn));
 					if($ans){
 						echo("data entered");

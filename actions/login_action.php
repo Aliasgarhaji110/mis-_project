@@ -18,6 +18,7 @@
 				$_SESSION['user_img_path']="actions/".$cre_ans['stu_img_path'];
 				$_SESSION['user_status']=$cre_ans['stu_status'];
 				$_SESSION['user_year_of_joining']=$cre_ans['stu_year_of_joining'];
+				$_SESSION['user_current_year']=$cre_ans['stu_year'];
 
 				// print_r($_SESSION);
 

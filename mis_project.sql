@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 04, 2018 at 08:29 PM
+-- Generation Time: Jul 06, 2018 at 04:28 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 7.1.7
 
@@ -51,12 +51,32 @@ INSERT INTO `add_type_activity` (`add_type_act_id`, `add_type_act_name`, `add_ty
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cultural_council`
+--
+
+CREATE TABLE `cultural_council` (
+  `cultural_council_id` int(11) NOT NULL,
+  `cultural_council_stu_id` bigint(20) DEFAULT NULL,
+  `cultural_council_stu_current_year` int(11) DEFAULT NULL,
+  `cultural_council_start_date` text,
+  `cultural_council_end_date` text,
+  `cultural_council_name` varchar(100) DEFAULT NULL,
+  `cultural_council_position` varchar(100) DEFAULT NULL,
+  `cultural_council_description` text,
+  `cultural_council_certificate_path` text,
+  `cultural_council_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `internship`
 --
 
 CREATE TABLE `internship` (
   `internship_id` int(11) NOT NULL,
   `internship_stu_id` bigint(20) DEFAULT NULL,
+  `internship_stu_current_year` int(11) DEFAULT NULL,
   `internship_start_date` text,
   `internship_end_date` text,
   `internship_org` varchar(100) DEFAULT NULL,
@@ -72,8 +92,8 @@ CREATE TABLE `internship` (
 -- Dumping data for table `internship`
 --
 
-INSERT INTO `internship` (`internship_id`, `internship_stu_id`, `internship_start_date`, `internship_end_date`, `internship_org`, `internship_super_name`, `internship_super_email`, `internship_super_number`, `internship_report_path`, `internship_certificate_path`, `internship_timestamp`) VALUES
-(1, 1513082, '2018-07-12', '2018-07-17', 'Adnan Enterprises', 'Abdultaiyeb Dedhawala', 'abcd@gmail.com', '9638527410', 'docs/internship/1513082_report_kunjpdf.pdf', 'docs/internship/1513082_certificate_kunjpdf.pdf', '2018-07-04 17:23:47');
+INSERT INTO `internship` (`internship_id`, `internship_stu_id`, `internship_stu_current_year`, `internship_start_date`, `internship_end_date`, `internship_org`, `internship_super_name`, `internship_super_email`, `internship_super_number`, `internship_report_path`, `internship_certificate_path`, `internship_timestamp`) VALUES
+(1, 1513075, 4, '2018-07-02', '2018-07-12', 'Adnan Enterprises', 'Abdultaiyeb Dedhawala', 'abcd@gmail.com', '9638527410', 'docs/internship/1530841725_1513075_report_kunjpdf.pdf', 'docs/internship/1530841725_1513075_certificate_kunjpdf.pdf', '2018-07-06 01:56:53');
 
 -- --------------------------------------------------------
 
@@ -104,6 +124,7 @@ INSERT INTO `main_activity` (`main_act_id`, `main_act_name`, `main_act_time`) VA
 CREATE TABLE `social_service` (
   `social_service_id` int(11) NOT NULL,
   `social_service_stu_id` bigint(20) DEFAULT NULL,
+  `social_service_stu_current_year` int(11) DEFAULT NULL,
   `social_service_start_date` text,
   `social_service_end_date` text,
   `social_service_org` varchar(100) DEFAULT NULL,
@@ -120,8 +141,8 @@ CREATE TABLE `social_service` (
 -- Dumping data for table `social_service`
 --
 
-INSERT INTO `social_service` (`social_service_id`, `social_service_stu_id`, `social_service_start_date`, `social_service_end_date`, `social_service_org`, `social_service_incharge_name`, `social_service_incharge_email`, `social_service_incharge_number`, `social_service_description`, `social_service_report_path`, `social_service_certificate_path`, `social_service_timestamp`) VALUES
-(1, 1513082, '2018-07-05', '2018-07-05', 'Adnan Welfare', 'Adnan Khan', 'adk@gmail.com', '7894561230', 'qwertyuioplkjhgfdszxcvb\r\nwertyuijbvcfg', 'docs/social_service/1513082_report_kunjpdf.pdf', 'docs/social_service/1513082_certificate_kunjpdf.pdf', '2018-07-04 18:25:29');
+INSERT INTO `social_service` (`social_service_id`, `social_service_stu_id`, `social_service_stu_current_year`, `social_service_start_date`, `social_service_end_date`, `social_service_org`, `social_service_incharge_name`, `social_service_incharge_email`, `social_service_incharge_number`, `social_service_description`, `social_service_report_path`, `social_service_certificate_path`, `social_service_timestamp`) VALUES
+(1, 1513075, 4, '2017-11-01', '2017-11-01', 'Adnan Welfare', 'Adnan Khan', 'adk@gmail.com', '7894561230', 'qwertyuiookjhgfdsazxcvbnbvdtg', 'docs/social_service/1530842905_1513075_report_kunjpdf.pdf', 'docs/social_service/1530842905_1513075_certificate_kunjpdf.pdf', '2018-07-06 02:08:25');
 
 -- --------------------------------------------------------
 
@@ -173,6 +194,25 @@ INSERT INTO `students` (`stu_id`, `stu_email`, `stu_password`, `stu_fname`, `stu
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tech_council`
+--
+
+CREATE TABLE `tech_council` (
+  `tech_council_id` int(11) NOT NULL,
+  `tech_council_stu_id` bigint(20) DEFAULT NULL,
+  `tech_council_stu_current_year` int(11) DEFAULT NULL,
+  `tech_council_start_date` text,
+  `tech_council_end_date` text,
+  `tech_council_name` varchar(100) DEFAULT NULL,
+  `tech_council_position` varchar(100) DEFAULT NULL,
+  `tech_council_description` text,
+  `tech_council_certificate_path` text,
+  `tech_council_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `temp`
 --
 
@@ -199,6 +239,12 @@ ALTER TABLE `add_type_activity`
   ADD PRIMARY KEY (`add_type_act_id`);
 
 --
+-- Indexes for table `cultural_council`
+--
+ALTER TABLE `cultural_council`
+  ADD PRIMARY KEY (`cultural_council_id`);
+
+--
 -- Indexes for table `internship`
 --
 ALTER TABLE `internship`
@@ -223,6 +269,12 @@ ALTER TABLE `students`
   ADD PRIMARY KEY (`stu_id`);
 
 --
+-- Indexes for table `tech_council`
+--
+ALTER TABLE `tech_council`
+  ADD PRIMARY KEY (`tech_council_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -231,6 +283,11 @@ ALTER TABLE `students`
 --
 ALTER TABLE `add_type_activity`
   MODIFY `add_type_act_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `cultural_council`
+--
+ALTER TABLE `cultural_council`
+  MODIFY `cultural_council_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `internship`
 --
@@ -245,7 +302,12 @@ ALTER TABLE `main_activity`
 -- AUTO_INCREMENT for table `social_service`
 --
 ALTER TABLE `social_service`
-  MODIFY `social_service_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+  MODIFY `social_service_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `tech_council`
+--
+ALTER TABLE `tech_council`
+  MODIFY `tech_council_id` int(11) NOT NULL AUTO_INCREMENT;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

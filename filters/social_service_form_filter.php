@@ -12,12 +12,24 @@
 		      	<div class="form-row col-md-12">	
 			    	<div class="form-group col-md-6">
 				        <label >Roll-no.</label>
-				        <input type="text" class="form-control" name="stu_id" value="<?php echo($_SESSION['user_id']) ?>" >
+				        <input type="text" class="form-control" name="stu_id" value="<?php echo($_SESSION['user_id']) ?>" readonly >
 			    	</div>
 			      	<div class="form-group col-md-6">
 			          <label>Student Name</label>
-			          <input type="text" class="form-control" name="stu_name" value="<?php echo($_SESSION['user_full_name']) ?>" disabled>
+			          <input type="text" class="form-control" name="stu_name" value="<?php echo($_SESSION['user_full_name']) ?>" readonly>
 			    	</div>
+			    	<div class="form-group col-md-6">
+                        <label>Year during activity performed</label>
+                        <select name="stu_year" class="form-control" required="true">
+                            <option value="0">Please Select </option>
+                            <option value="1">FE</option>
+                            <option value="2">SE</option>
+                            <option value="3">TE</option>
+                            <option value="4">BE</option>
+                        </select>
+                    </div>
+			    </div>
+		      	<div class="form-row col-md-12">	
 			    	<div class="form-group col-md-6">
 			       		<label>Select Start Date</label>
 			       		<input type="date" class="form-control" name="social_service_start_date" required="true">

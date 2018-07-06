@@ -21,14 +21,14 @@
 			if((in_array($_FILES['internship_certificate']['type'], $arr))&&(in_array($_FILES['internship_report']['type'], $arr))){
 				
 				$tmp=$_FILES['internship_report']['tmp_name'];
-				$path="docs/internship/".$_SESSION['user_id']."_report_".$_FILES['internship_report']['name'];
+				$path="docs/internship/".time()."_".$_SESSION['user_id']."_report_".$_FILES['internship_report']['name'];
 				$tmp1=$_FILES['internship_certificate']['tmp_name'];
-				$path1="docs/internship/".$_SESSION['user_id']."_certificate_".$_FILES['internship_certificate']['name'];
+				$path1="docs/internship/".time()."_".$_SESSION['user_id']."_certificate_".$_FILES['internship_certificate']['name'];
 				$file_upload=move_uploaded_file($tmp, $path);
 				$file_upload=move_uploaded_file($tmp1, $path1);
 				if($file_upload){
 					
-					$str_up="Insert into internship(internship_stu_id,internship_start_date,internship_end_date,internship_org,internship_super_name,internship_super_email,internship_super_number,internship_report_path,internship_certificate_path)values('".$_POST['stu_id']."','$sdate','$edate','".$_POST['internship_org']."','".$_POST['internship_super_name']."','".$_POST['internship_super_email']."','".$_POST['internship_super_number']."','$path','$path1')";
+					$str_up="Insert into internship(internship_stu_id,internship_start_date,internship_end_date,internship_org,internship_super_name,internship_super_email,internship_super_number,internship_report_path,internship_certificate_path,internship_stu_current_year)values('".$_POST['stu_id']."','$sdate','$edate','".$_POST['internship_org']."','".$_POST['internship_super_name']."','".$_POST['internship_super_email']."','".$_POST['internship_super_number']."','$path','$path1','".$_POST['stu_year']."')";
 					$ans=mysqli_query($conn,$str_up)or die(mysqli_error($conn));
 					if($ans){
 						echo("data entered");
