@@ -28,7 +28,7 @@
 				$file_upload=move_uploaded_file($tmp1, $path1);
 				if($file_upload){
 					
-					$str_up="Insert into tech_council(tech_council_stu_id,tech_council_start_date,tech_council_end_date,tech_council_name,tech_council_position,tech_council_description,tech_council_certificate_path,tech_council_stu_current_year)values('".$_POST['stu_id']."','$sdate','$edate','".$_POST['tech_council_name']."','".$_POST['tech_council_position']."','".$_POST['tech_council_description']."','$path1','".$_POST['stu_year']."')";
+					$str_up="Insert into tech_council(tech_council_stu_id,tech_council_start_date,tech_council_end_date,tech_council_name_id,tech_council_position,tech_council_description,tech_council_certificate_path,tech_council_stu_current_year)values('".$_POST['stu_id']."','$sdate','$edate','".$_POST['tech_council_name_id']."','".$_POST['tech_council_position']."','".$_POST['tech_council_description']."','$path1','".$_POST['stu_year']."')";
 					$ans=mysqli_query($conn,$str_up)or die(mysqli_error($conn));
 					if($ans){
 						echo("data entered");

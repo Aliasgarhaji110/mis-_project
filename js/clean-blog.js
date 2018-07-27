@@ -506,6 +506,7 @@ $(function(){
       $("#element_entry").html(response);
     })
   })
+  
   $(document).on("click",".act_list_item",function(a){
     a.preventDefault();
     // alert(1);
@@ -513,6 +514,18 @@ $(function(){
     // alert(rec)
     switch(rec){
       case '2':$.post("filters/internship_form_filter.php",function(msg){
+                  $("#element_entry").html(msg);
+                });
+              break;
+      case '3':$.post("filters/project_form_filter.php",function(msg){
+                  $("#element_entry").html(msg);
+                });
+              break;
+      case '4':$.post("filters/sports_form_filter.php",function(msg){
+                  $("#element_entry").html(msg);
+                });
+              break;
+      case '3':$.post("filters/project_form_filter.php",function(msg){
                   $("#element_entry").html(msg);
                 });
               break;
@@ -524,7 +537,10 @@ $(function(){
                   $("#element_entry").html(msg);
                 });
               break;
-
+       case '8':$.post("filters/cultural_activity_form_filter.php",function(msg){
+                  $("#element_entry").html(msg);
+                });
+              break;
       case '9':$.post("filters/social_service_form_filter.php",function(msg){
                   $("#element_entry").html(msg);
                 });
@@ -597,7 +613,9 @@ $(function(){
     }
   })
 
-  $(document).on("submit","#tech_council_form",function(a){
+
+
+$(document).on("submit","#tech_council_form",function(a){
     // alert(1)
     a.preventDefault();
     if(flag){
@@ -627,6 +645,7 @@ $(function(){
       })
     }
   })
+
 
 $(document).on("submit","#cultural_council_form",function(a){
     // alert(1)
@@ -659,7 +678,99 @@ $(document).on("submit","#cultural_council_form",function(a){
     }
   })
 
+$(document).on("submit","#project_form",function(a){
+    // alert(1)
+    a.preventDefault();
+    if(flag){
+      rec=new FormData(this);
+      $.ajax({
+        type:"post",
+        data:rec,
+        url:"actions/project_action.php",
+        contentType:false,
+        cache:false,
+        processData:false,
+        success:function(abc){
+          // alert(abc);
+          
+          if(abc =='data entered'){
+            $.post("filters/project_form_filter.php",function(msg){
+              $("#element_entry").html(msg);
+            });
+          }
+          else{
+            alert(abc);
+          }
+        },
+        error:function(err){
+          console.log(err);
+        }
+      })
+    }
+  })
 
+
+  $(document).on("submit","#cultural_activity_form",function(a){
+    // alert(1)
+    a.preventDefault();
+    if(flag){
+      rec=new FormData(this);
+      $.ajax({
+        type:"post",
+        data:rec,
+        url:"actions/cultural_activity_action.php",
+        contentType:false,
+        cache:false,
+        processData:false,
+        success:function(abc){
+          // alert(abc);
+          
+          if(abc =='data entered'){
+            $.post("filters/cultural_activity_form_filter.php",function(msg){
+              $("#element_entry").html(msg);
+            });
+          }
+          else{
+            alert(abc);
+          }
+        },
+        error:function(err){
+          console.log(err);
+        }
+      })
+    }
+  })
+
+  $(document).on("submit","#sports_form",function(a){
+    // alert(1)
+    a.preventDefault();
+    if(flag){
+      rec=new FormData(this);
+      $.ajax({
+        type:"post",
+        data:rec,
+        url:"actions/sports_action.php",
+        contentType:false,
+        cache:false,
+        processData:false,
+        success:function(abc){
+          // alert(abc);
+          
+          if(abc =='data entered'){
+            $.post("filters/sports_form_filter.php",function(msg){
+              $("#element_entry").html(msg);
+            });
+          }
+          else{
+            alert(abc);
+          }
+        },
+        error:function(err){
+          console.log(err);
+        }
+      })
+    }
+  })
 
 
 

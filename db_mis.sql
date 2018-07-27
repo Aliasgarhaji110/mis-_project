@@ -102,3 +102,39 @@ create table cultural_council(
 	cultural_council_timestamp timestamp
 );
 
+create table project(
+	project_id int auto_increment primary key,
+	project_stu_id bigint,
+	project_stu_current_year int,
+	project_start_date text,
+	project_end_date text,
+	project_title varchar(100),
+	project_description text,
+	project_abstract_path text,
+	project_report_path text,
+	project_timestamp timestamp
+);
+
+create table cultural_activity(
+	cultural_activity_id int auto_increment primary key,
+	cultural_activity_stu_id bigint,
+	cultural_activity_stu_current_year int,
+	cultural_activity_start_date text,
+	cultural_activity_end_date text,
+	cultural_activity_name text,
+	cultural_activity_description text,
+	cultural_activity_certificate_path text,
+	cultural_activity_timestamp timestamp
+);
+
+create table sports(
+	sports_id int auto_increment primary key,
+	sports_stu_id bigint,
+	sports_stu_current_year int,
+	sports_start_date text,
+	sports_end_date text,
+	sports_name text,
+	sports_description text,
+	sports_certificate_path text,
+	sports_timestamp timestamp
+);
